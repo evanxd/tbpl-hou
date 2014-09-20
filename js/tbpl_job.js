@@ -27,7 +27,8 @@ TbplJob.prototype = {
   isDone: function() {
     var isDone = true;
     Array.prototype.forEach.call(this.results, function(el) {
-      if (el.getAttribute('class').contains('running')) {
+      if (el.getAttribute('class').contains('running') ||
+          el.getAttribute('class').contains('pending')) {
         isDone = false;
       }
     });
