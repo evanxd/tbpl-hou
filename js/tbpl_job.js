@@ -11,7 +11,6 @@ TbplJob.prototype = {
   
   isAllSuccessful: function() {
     var isAllSuccessful = true;
-    
     if (this.isDone()) {
       Array.prototype.forEach.call(this.results, function(el) {
         if (!el.getAttribute('class').contains('success')) {
@@ -25,7 +24,7 @@ TbplJob.prototype = {
   },
   
   isDone: function() {
-    var isDone = true;
+    var isDone = this.results ? true : false;
     Array.prototype.forEach.call(this.results, function(el) {
       if (el.getAttribute('class').contains('running') ||
           el.getAttribute('class').contains('pending')) {
