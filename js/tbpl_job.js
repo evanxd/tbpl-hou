@@ -5,6 +5,10 @@ function TbplJob (id) {
 }
 
 TbplJob.prototype = {
+  get description() {
+    return document.querySelector('#pushes .patches .patchTitle .desc').textContent;
+  },
+
   get results() {
     return document.querySelectorAll('#pushes .results li .osresults .machineResult');
   },

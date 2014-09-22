@@ -11,9 +11,12 @@ function checkResult() {
     if (tbpl.isAllSuccessful()) {
       result = 'Success!';
     }
-    Notification.requestPermission( function(status) {
-      new Notification('Result', { body: result });
-    }); 
+    Notification.requestPermission(function() {
+      var notification = new Notification(tbpl.description, { body: result });
+      notification.onclick = function() {
+        window.focus();
+      };
+    });
   } else {
     setTimeout(checkResult, 5000);
   }
