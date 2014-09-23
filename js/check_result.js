@@ -8,7 +8,7 @@ function checkResult() {
   var tbpl = new TbplJob();
   var result = 'Fail!';
   if (tbpl.isDone()) {
-    if (tbpl.isAllSuccessful()) {
+    if (tbpl.isSuccessful()) {
       result = 'Success!';
     }
     Notification.requestPermission(function() {

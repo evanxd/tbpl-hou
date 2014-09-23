@@ -12,21 +12,26 @@ TbplJob.prototype = {
   get results() {
     return document.querySelectorAll('#pushes .results li .osresults .machineResult');
   },
-  
-  isAllSuccessful: function() {
-    var isAllSuccessful = true;
+
+  isSuccessful: function() {
+    var isSuccessful = true,
+        previousJob;
+
     if (this.isDone()) {
       Array.prototype.forEach.call(this.results, function(el) {
         if (!el.getAttribute('class').contains('success')) {
-          isAllSuccessful = false;
+          isSuccessful = false;
+        } else if (el.textContent === previousJob) {
+          isSuccessful = true;
         }
+        previousJob = el.textContent;
       });
     } else {
-      isAllSuccessful = false;
+      isSuccessful = false;
     }
-    return isAllSuccessful;
+    return isSuccessful;
   },
-  
+
   isDone: function() {
     var isDone = this.results ? true : false;
     Array.prototype.forEach.call(this.results, function(el) {
