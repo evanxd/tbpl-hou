@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "tbpl-hou",
+  "version": "0.0.1",
+  "description": "TBPL Hou lets Gaia developers get notifications when the jobs are done.",
+  "content_scripts": [{
+    "matches": ["https://tbpl.mozilla.org/?rev=*&tree=Gaia-Try"],
+    "js": ["js/tbpl_job.js", "js/check_result.js"]
+  }]
+}
