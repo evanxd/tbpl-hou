@@ -19,7 +19,7 @@ TbplJob.prototype = {
 
     if (this.isDone()) {
       Array.prototype.forEach.call(this.results, function(el) {
-        if (!el.getAttribute('class').contains('success')) {
+        if (!el.classList.contains('success')) {
           isSuccessful = false;
         } else if (el.textContent === previousJob) {
           isSuccessful = true;
@@ -35,8 +35,8 @@ TbplJob.prototype = {
   isDone: function() {
     var isDone = this.results ? true : false;
     Array.prototype.forEach.call(this.results, function(el) {
-      if (el.getAttribute('class').contains('running') ||
-          el.getAttribute('class').contains('pending')) {
+      if (el.classList.contains('running') ||
+          el.classList.contains('pending')) {
         isDone = false;
       }
     });
