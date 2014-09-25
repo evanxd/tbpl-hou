@@ -8,7 +8,9 @@ var gulp = require('gulp'),
     sh = require('execSync'),
     Q = require('q');
 
-gulp.task('build', function() {
+gulp.task('build', ['build-firefox-addon', 'build-chrome-extension']);
+
+gulp.task('build-firefox-addon', function() {
   (function() {
     // Download Firefox Add-ons SDK.
     var deferred = Q.defer();
