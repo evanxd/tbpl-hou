@@ -35,3 +35,23 @@ gulp.task('build', function() {
       .pipe(gulp.dest('build'));
   });
 });
+
+gulp.task('build-chrome-extension', function() {
+  (function() {
+    // Move tbpl-hou script into chrome-extension folder.
+    var deferred = Q.defer();
+    gulp.src('js/**/*.js')
+      .pipe(gulp.dest('chrome-extension/js'))
+      .on('end', function() {
+        deferred.resolve();
+      });
+    return deferred.promise;
+  })()
+  .then(function() {
+    // Build it.
+    sh.run('sh ./chrome-extension/crxmake.sh ./chrome-extension ./chrome-extension/key.pem');
+    gulp.src('chrome-extension.crx')
+      .pipe(clean())
+      .pipe(gulp.dest('build'));
+  });
+});
