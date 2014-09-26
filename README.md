@@ -24,8 +24,12 @@ gulp build-chrome-extension
 ```
 
 ## Download
-### Firefox Add-ons
-* [version 0.0.1](https://evanxd.github.io/tbpl-hou/download/tbpl-hou-0.0.1.xpi) - Send the result notification once the TBPL job is done.
+### version 0.0.2
+Match different URLs(`https://tbpl.mozilla.org/?rev=*&tree=Gaia-Try` or `https://tbpl.mozilla.org/?tree=Gaia-Try&rev=*`).
+* [Firefox Add-ons](https://evanxd.github.io/tbpl-hou/download/tbpl-hou-0.0.2.xpi)
+* [Chrome Extension](https://evanxd.github.io/tbpl-hou/download/tbpl-hou-0.0.2.crx)
 
-### Chrome Extension
-* [version 0.0.1](https://evanxd.github.io/tbpl-hou/download/tbpl-hou-0.0.1.crx) - Send the result notification once the TBPL job is done.
+### version 0.0.1
+Send the result notification once the TBPL job is done.
+* [Firefox Add-ons](https://evanxd.github.io/tbpl-hou/download/tbpl-hou-0.0.1.xpi)
+* [Chrome Extension](https://evanxd.github.io/tbpl-hou/download/tbpl-hou-0.0.1.crx)

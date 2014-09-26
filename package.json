@@ -1,6 +1,6 @@
 {
   "name": "tbpl-hou",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TBPL Hou lets Gaia developers get notifications when the jobs are done.",
   "author": "Evan Tseng <itoyxd@gmail.com>",
   "devDependencies": {
