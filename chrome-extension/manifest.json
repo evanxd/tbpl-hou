@@ -8,6 +8,6 @@
       "https://tbpl.mozilla.org/?rev=*&tree=Gaia-Try",
       "https://tbpl.mozilla.org/?tree=Gaia-Try&rev=*"
     ],
-    "js": ["js/tbpl_job.js", "js/check_result.js"]
+    "js": ["js/tbpl_job.js", "js/tbpl_audio.js", "js/check_result.js"]
   }]
 }

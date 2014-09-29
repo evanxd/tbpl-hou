@@ -1,6 +1,6 @@
 'use strict';
 
-/* global TbplJob, Notification */
+/* global TbplJob, TbplAudio, Notification */
 
 (function() {
   var container = document.querySelector('#container');
@@ -10,14 +10,19 @@
 
   function checkResult() {
     var tbpl = new TbplJob();
-    var result = 'Fail!';
+    var result = false;
     if (tbpl.isDone()) {
       if (tbpl.isSuccessful()) {
-        result = 'Success!';
+        result = true;
       }
 
       Notification.requestPermission(function() {
-        var notification = new Notification(tbpl.description, { body: result });
+        var notification = new Notification(tbpl.description, { 
+          body: result ? 'Success!' : 'Failure!'
+        });
+        notification.onshow = function() {
+          new TbplAudio(result ? 'marioIGotIt' : 'marioDead').play();
+        };
         notification.onclick = function() {
           window.focus();
         };

@@ -11,6 +11,6 @@ tabs.on('ready', function(tab) {
   if (tab.url.match(/^https:\/\/tbpl.mozilla.org\/\?rev=\w+\x26tree=Gaia-Try/) ||
       tab.url.match(/^https:\/\/tbpl.mozilla.org\/\?tree=Gaia-Try\x26rev=\w+/)) {
     contentScript = new ContentScript(tab);
-    contentScript.inject(['tbpl_job.js', 'check_result.js']);
+    contentScript.inject(['tbpl_job.js', 'tbpl_audio.js', 'check_result.js']);
   }
 });
